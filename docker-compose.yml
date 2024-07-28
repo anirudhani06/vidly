@@ -1,0 +1,14 @@
+version: '3.8'
+name: 'vidly'
+
+services:
+  app:
+    image: vidly
+    container_name: vidly-container
+    ports:
+      - '8080:8000'
+    volumes:
+      - src/:/app
+    env_file:
+      - .env
+    command: python manage.py runserver 0.0.0.0:8000
